@@ -1,0 +1,186 @@
+-- DIALOG 16
+-- CHARSET　����はいえ熱夢アイエラフキンジミーディスナウトヨルリテム名前仕事治す部族さようならおかり、バタ。ニャの魔法がにオド谷言葉を話力与た長間冒れてだもっくこやろる決し手放で弟子ち大き傷負倒発見へ連来ばわ中と呼んまず彼探出帰酋本当感謝ぞ村戦士総娘東あそ者耳入ほ仲精霊不思議居場所知教遠住石都西クカ恐ぬ道沿行け通じ南隠里約束誰突止め助ロ会聞チョコパ捧げ物強授ポ私目戻自分生ッ祈師つ今使必要ぐ我！ズ苦痛取除…機嫌丈夫ど友み報告加護
+160D02:   IF 0226 JUMP 160D0B
+160D07:   XJUMP 1590B1
+160D0B:   LOAD_DIALOG_OPTIONS 02BC(熱) 02BD(夢) 02BE(アイエラ) 02BF(ラフキン) 02C0(ジミー) 02C1(ディスキキ) 02C2(ナウアトラ) 02C3(ヨラルー) 
+160D1E:   LOAD_MORE_DIALOG_OPTIONS 02C5(トーテム) 82C6(名前) 82C7(仕事) 02C8(治す) 82C9(部族) 
+160D2B:   IF NOT FLAG INTANYA_INTRO_DONE DO: 
+160D2E:   JUMP96 160D4D
+160D31:   SET BIT [INTANYA_CONVERSATION_RESET]
+160D34:   PRINT おかえり、アバタール。
+-- ENGRISH: Welcome back, Avatar.
+160D4A:   JUMP8C 160E2F
+160D4D:   PRINT インターニャの魔法が、お前にイーオドンの谷の言葉を話す力を与えた。
+-- ENGRISH: Magic of the inter-Nha is, given the power to speak the word of you to Iodon of the valley.
+160D8F:   LINE_BREAK
+160D90:   LINE_BREAK
+160D91:   PRINT アバタールよ。お前は長い間、熱に冒されていたのだ。だが、もう、すっかりよくなった。
+-- ENGRISH: Avatar. You are he a long time, it had been affected by the heat. But, the other, I became completely well.
+160DE3:   LINE_BREAK
+160DE4:   PRINT お前に、このトーテムをやろう。この谷にいる間は、決して手放すでない。
+-- ENGRISH: To you, to try to do this totem. While in the valley, and are not let go any way.
+160E28:   SET INTANYA_INTRO_DONE
+160E2B:   SET_DIALOG_OPTIONS SHOW 10 (名前 - given names) SHOW 1 (熱 - Heat) 
+160E2F:   WAIT_FOR_INPUT
+160E30:   IF NOT SELECTED DIALOG [(熱 - Heat)  DO: 
+160E33:   JUMP96 160EF0
+160E36:   SET_DIALOG_OPTIONS HIDE 1 (熱 - Heat) SHOW 2 (夢 - Dream) 
+160E3A:   PRINT インターニャの弟子たちが、大きな傷を負って倒れているお前を発見して、ここへ連れて来た。
+-- ENGRISH: Disciples of the inter-Nha is, to discover you have fallen owed a large scratch, was brought here.
+160E90:   LINE_BREAK
+160E91:   PRINT インターニャ、お前の傷を治した。だが、しばらくは熱に冒されて、うわ言を言っていた。夢の話だ。
+-- ENGRISH: Inter Nha, it cures you of scratches. But it had been a while been affected by the heat, saying delirium. It is a dream of the story.
+160EED:   JUMP8C WAIT_FOR_INPUT
+160EF0:   IF NOT SELECTED DIALOG [(夢 - Dream)  DO: 
+160EF3:   JUMP96 160F59
+160EF6:   SET_DIALOG_OPTIONS HIDE 2 (夢 - Dream) SHOW 3 (アイエラ - Aiera) SHOW 4 (ラフキン - Lufkin) SHOW 5 (ジミー - Jimmy) 
+160EFC:   PRINT お前は夢の中で、アイエラとラフキンとジミーの名を呼んでいた。まずは、彼らを探し出すことだ。
+-- ENGRISH: You are in a dream, was calling Aiera and Lufkin and Jimmy's name. First of all, you can find them.
+160F56:   JUMP8C WAIT_FOR_INPUT
+160F59:   IF NOT SELECTED DIALOG [(アイエラ - Aiera)  DO: 
+160F5C:   JUMP96 16102E
+160F5F:   SET_DIALOG_OPTIONS HIDE 3 (アイエラ - Aiera) 
+160F62:   IF NOT BIT [AIERA_SAVED_KURAK_JOINED_UNION] DO: 
+160F65:   JUMP96 160FBB
+160F68:   PRINT お前がアイエラを連れて帰ってくれたことを、酋長は本当によろこんで感謝していたぞ。
+-- ENGRISH: that you has me back brought Aiera, chief was grateful Do really pleased.
+160FB8:   JUMP8C 16102B
+160FBB:   PRINT この村の戦士たちが、総出でアイエラを探している。アイエラは酋長の娘なのだ。
+-- ENGRISH: Warriors of this village, looking for a Aiera in full force. Aiera's the daughter of the chief.
+161005:   LINE_BREAK
+161006:   PRINT アイエラをさらったのはウラリ族だ。
+-- ENGRISH: It was kidnapped Aiera It 's Urari group.
+161028:   SET_DIALOG_OPTIONS SHOW 9 (トーテム - Totem) 
+16102B:   JUMP8C WAIT_FOR_INPUT
+16102E:   IF NOT SELECTED DIALOG [(ラフキン - Lufkin)  DO: 
+161031:   JUMP96 1610DC
+161034:   SET_DIALOG_OPTIONS HIDE 4 (ラフキン - Lufkin) SHOW 8 (ヨラルー - Yoraru) 
+161038:   PRINT この村の東にある、ヨラルー族の村に、そのような名前の者がいると、インターニャの耳に入っている。
+-- ENGRISH: To the east of this village, in the village of Yoraru group, and there are such name who, I have entered into the ears of the inter-Nha.
+161096:   LINE_BREAK
+161097:   PRINT ラフキン、ほかの仲間を探すのに、とても力になると、精霊たちは言う。
+-- ENGRISH: Lufkin, and to look for the other fellow, and so become a force, spirits say.
+1610D9:   JUMP8C WAIT_FOR_INPUT
+1610DC:   IF NOT SELECTED DIALOG [(ジミー - Jimmy)  DO: 
+1610DF:   JUMP96 161144
+1610E2:   SET_DIALOG_OPTIONS HIDE 5 (ジミー - Jimmy) 
+1610E5:   PRINT インターニャ、不思議な夢を見た。夢は、ラフキンが、ジミーの居場所を知っていると教えてくれた。
+-- ENGRISH: I saw Inter Nha, a strange dream. Dream, Lufkin has taught me to know the whereabouts of Jimmy.
+161141:   JUMP8C WAIT_FOR_INPUT
+161144:   IF NOT SELECTED DIALOG [(ディスキキ - Disukiki)  DO: 
+161147:   JUMP96 161186
+16114A:   SET_DIALOG_OPTIONS HIDE 6 (ディスキキ - Disukiki) 
+16114D:   PRINT とても遠くに住んでいる部族だ。石の都ナウアトラの西だ。
+-- ENGRISH: It is a tribe who live in very far away. It is west of the stone city Nauatora.
+161183:   JUMP8C WAIT_FOR_INPUT
+161186:   IF NOT SELECTED DIALOG [(ナウアトラ - Nauatora)  DO: 
+161189:   JUMP96 1611FD
+16118C:   SET_DIALOG_OPTIONS HIDE 7 (ナウアトラ - Nauatora) SHOW 6 (ディスキキ - Disukiki) 
+161190:   PRINT ナウアトラ族は、彼らの石の都を、ティクティカトルと呼んでいる。
+-- ENGRISH: Nauatora family, is the capital of their stone, is called Thich Thi Quatre.
+1611CE:   LINE_BREAK
+1611CF:   LINE_BREAK
+1611D0:   PRINT ナウアトラの西には、ディスキキの村がある。
+-- ENGRISH: To the west of Nauatora, there is a village of Disukiki.
+1611FA:   JUMP8C WAIT_FOR_INPUT
+1611FD:   IF NOT SELECTED DIALOG [(ヨラルー - Yoraru)  DO: 
+161200:   JUMP96 16127A
+161203:   SET_DIALOG_OPTIONS HIDE 8 (ヨラルー - Yoraru) SHOW 7 (ナウアトラ - Nauatora) 
+161207:   PRINT 恐れを知らぬ戦士の部族だ。この村から道に沿って東へ行け。
+-- ENGRISH: It is a warrior tribe that fearless. And go to the east from the village along the road.
+16123F:   LINE_BREAK
+161240:   LINE_BREAK
+161241:   PRINT 道はヨラルーの村に通じている。その南が、ナウアトラだ。
+-- ENGRISH: Road leads to the village of Yoraru. The south, but Nauatora.
+161277:   JUMP8C WAIT_FOR_INPUT
+16127A:   IF NOT SELECTED DIALOG [(ウラリ - Urari)  DO: 
+16127D:   JUMP96 16135E
+161280:   SET_DIALOG_OPTIONS HIDE 9 (トーテム - Totem) 
+161283:   PRINT ウラリ族は隠れ里に住んでいる。精霊たちも、その場所を教えてはくれない。
+-- ENGRISH: Urari family lives in Kakurezato. Spirits also, do not you tell me the location.
+1612C9:   LINE_BREAK
+1612CA:   PRINT だが、精霊は約束してくれた。ぐかがかならず、ウラリの村を我き！ズ、アイエラを苦け出すとな。
+-- ENGRISH: But, Spirit was promised. Ingredients or not always, we-out of the village of Urari! Figure, Issuing only click the Aiera.
+161324:   LINE_BREAK
+161325:   PRINT アイエラを苦けたければ酋長のア痛痛ンに取って話を除け。
+-- ENGRISH: If longer Nigake the Aiera and except for the story to take to the A pain pain down chief.
+16135B:   JUMP8C WAIT_FOR_INPUT
+16135E:   IF NOT SELECTED DIALOG [(トーテム - Totem)  DO: 
+161361:   JUMP96 161427
+161364:   SET_DIALOG_OPTIONS HIDE 10 (名前 - given names) 
+161367:   PRINT このトーテムに…機嫌ラトルか丈インドを夫ど友にすると、み力な魔法の力をお前に報けてくれる。
+-- ENGRISH: If you are etc. husband ... mood Rattle or length India in this totem friend, can you Hoke the power of attractive magic to you.
+1613C1:   LINE_BREAK
+1613C2:   PRINT ヨ告を夫ど友にすると、お前を加の護の前に?してくれる。
+-- ENGRISH: When Yo told the husband etc. friend, can you in front of Mamoru of pressure to you.
+1613F8:   LINE_BREAK
+1613F9:   LINE_BREAK
+1613FA:   PRINT このほかのトーテムは、??の力で探すのだ。
+-- ENGRISH: This addition to the totem, it looks at the power of.
+161424:   JUMP8C WAIT_FOR_INPUT
+161427:   IF NOT SELECTED DIALOG [(名前 - given names)  DO: 
+16142A:   JUMP96 161467
+16142D:   SET_DIALOG_OPTIONS HIDE 11 (仕事 - Work) 
+161430:   PRINT ?まれたときから、ずっとインターニャと呼ばれている。
+-- ENGRISH: From the time Mareta, it has been much called inter Nha.
+161464:   JUMP8C WAIT_FOR_INPUT
+161467:   IF NOT SELECTED DIALOG [(仕事 - Work)  DO: 
+16146A:   JUMP96 1614D5
+16146D:   SET_DIALOG_OPTIONS HIDE 12 (治す - Cure) 
+161470:   PRINT クーラ?ク族の?とう?をしている。精霊の言葉を除き、傷?いた者や、熱に冒された者を治す。
+-- ENGRISH: We have a party of family Kuraku. Except for the words of the spirit, to heal wounds have a person or a person who is affected by heat.
+1614C8:   IF NOT BIT [INTANYA_CONVERSATION_RESET] DO: 
+1614CB:   JUMP96 1614D2
+1614CE:   SET_DIALOG_OPTIONS SHOW 13 (部族 - Tribe) SHOW 1 (熱 - Heat) 
+1614D2:   JUMP8C WAIT_FOR_INPUT
+1614D5:   IF NOT SELECTED DIALOG [(治す - Cure)  DO: 
+1614D8:   JUMP96 16163A
+1614DB:   SET_DIALOG_OPTIONS HIDE 13 (部族 - Tribe) 
+1614DE:   *AE*
+1614DF:   *24*
+1614E0:   *1D*
+1614E1:   *1D*
+1614E2:   *25*
+1614E3:   *1D*
+1614E4:   JUMP96 1615A2
+1614E7:   PRINT 加には、なんでも治す、大きな力がある。さいわい、?のお前には、その力を?う??がない。
+-- ENGRISH: In addition, the cure anything, there is a large force. Fortunately, you in the, and there is no cormorant its power.
+16153D:   LINE_BREAK
+16153E:   PRINT もし、インターニャの苦けがいるときは、お前にやったトーテムを?い、す?に帰ってくるのだ。
+-- ENGRISH: If, when there are only bitter inter Nha, the stomach totem've done to you, you come back to the nest.
+161596:   IF NOT BIT [INTANYA_CONVERSATION_RESET] DO: 
+161599:   JUMP96 16159F
+16159C:   SET_DIALOG_OPTIONS SHOW 10 (名前 - given names) 
+16159F:   JUMP8C 161637
+1615A2:   *A2*
+1615A3:   *1D*
+1615A4:   *1D*
+1615A5:   *25*
+1615A6:   *1D*
+1615A7:   PRINT 精霊よ、?に力を与えたまえ?
+-- ENGRISH: The Pearl River giving spirit by the force to
+1615C3:   LINE_BREAK
+1615C4:   LINE_BREAK
+1615C5:   LINE_BREAK
+1615C6:   PRINT クク?の精霊よ、これなるアバタールの??を?り?き、その傷をいやしたまえ??
+-- ENGRISH: I spirit of Kuku, this becomes the Avatar of Riki, before you have healed the wound
+161612:   LINE_BREAK
+161613:   PRINT 精霊の??はよかった。もう大??だ。
+-- ENGRISH: Spirit's was good. It is already large.
+161637:   JUMP8C WAIT_FOR_INPUT
+16163A:   IF NOT SELECTED DIALOG [(部族 - Tribe)  DO: 
+16163D:   JUMP96 1616F7
+161640:   SET_DIALOG_OPTIONS HIDE 14 (熱 - Heat) 
+161643:   PRINT インターニャは、?の部族にも?だちがいる。?んな、インターニャにいろいろ??してくれる。
+-- ENGRISH: Inter Nha is, there are Modachi to tribes. Do such, I me lot to Inter Nha.
+16169B:   LINE_BREAK
+16169C:   PRINT ここはクーラ?ク族の村だ。酋長はア痛痛ン。まだ取ってないなら、あいさ??らいしておけよ。
+-- ENGRISH: Here is the village of Kuraku group. Chief nitrous pain pain down. If you have not taken yet, and Oke was Aisarai.
+1616F4:   JUMP8C WAIT_FOR_INPUT
+1616F7:   IF NOT SELECTED DIALOG [(さようなら - goodbye)  DO: 
+1616FA:   JUMP96 161729
+1616FD:   PRINT 精霊の??を?っているぞ、アバータール。
+-- ENGRISH: Gonna have Tsu that the spirits, Abataru.
+161725:   SET BIT [INTANYA_CONVERSATION_RESET]
+161728:   (BLANK)
+161729:   

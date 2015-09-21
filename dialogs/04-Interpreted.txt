@@ -1,0 +1,284 @@
+Dialog 4
+
+-- DIALOG 4
+159A0F:   LOAD_DIALOG_OPTIONS 824C(名前) 824D(仕事) 824E(部族) 024F(ミルミデックス) 0250(アイエラ) 0251(ヨラルー) 
+159A1E:   LOAD_MORE_DIALOG_OPTIONS 0253(トプルー) 0254(連合) 0255(ドラム) 
+159A27:   IF NOT BIT [KNOWS_DRUM_IS_NEEDED_1] DO: 
+159A2D:      SET_DIALOG_OPTIONS SHOW 9 (ドラム - Drum) 
+159A2A:   END IF
+159A30:   IF BIT [] DO: 
+159A36:      IF BIT [AIERA_SAVED] DO: 
+159A3C:         SET BIT [86 ]
+159A3F:         PRINT おお、アバタール。アイエラの恩人！
+-- ENGRISH: Oh, Avatar. Benefactor of Aiera!
+159A61:         LINE_BREAK
+159A62:         PRINT お前は村で最高の客だ゛
+-- ENGRISH: You're the best customers in the village ゛
+159A78:         SET_DIALOG_OPTIONS SHOW 5 (アイエラ - Aiera) 
+159A7B:         JUMP8C 159C60
+159A39:      END IF
+159A7E:      IF BIT [KNOWS_KURAK_NEED] DO: 
+159A84:         PRINT アイエラを助け出してもいないのに、この村にもどってきたのは、なぜだ？
+-- ENGRISH: And though not even rescued the Aiera, it is, it's why did come back to this village?
+159AC8:         LINE_BREAK
+159AC9:         PRINT いったい、何の用だ？
+-- ENGRISH: Heck, it's what iodide?
+159ADD:         SET_DIALOG_OPTIONS SHOW 5 (アイエラ - Aiera) 
+159AE0:         JUMP8C 159B0E
+159A81:      END IF
+159AE3:      PRINT アバタール！
+-- ENGRISH: Avatar!
+159AEF:      LINE_BREAK
+159AF0:      PRINT よく来てくれたな。歓迎するぞ。
+-- ENGRISH: Well it came. Welcome.
+159B0E:      JUMP8C 159C60
+159A33:   END IF
+159B11:   PRINT アバタールよ、目ざめたか。お前は、ダーデンにやられて、ずっとねむっていたのだ。
+-- ENGRISH: Avatar yo, or woke up. You are, it is done in Darden, I was sleeping much.
+159B5F:   LINE_BREAK
+159B60:   PRINT アイエラはダーデンにさらわれてしまった。
+-- ENGRISH: Aiera had been kidnapped in Darden.
+159B88:   SET_DIALOG_OPTIONS SHOW 5 (アイエラ - Aiera) 
+159B8B:   IF NOT BIT [AIERA_SAVED] DO: 
+159B8E:   JUMP96 159BF5
+159B91:   SET BIT [86 ]
+159B94:   PRINT お前はわが娘、アイエラを救い出してくれた。この村の酋長として、お前に感謝し、友として歓迎する。
+-- ENGRISH: You gave me rescued my daughter, the Aiera. As chief of this village, and thanks to you, welcome as friends.
+159BF2:   JUMP8C 159C60
+159BF5:   PRINT クーラックの酋長の前にしっかりとたっているところを見ると傷はすっかりよくなったようだな。
+-- ENGRISH: It looks like the wound became quite well If you look at the place where you are firmly standing in front of the chief of Kurakku.
+159C4D:   LINE_BREAK
+159C4E:   PRINT それで、何の用だ？
+-- ENGRISH: So, it's no use?
+159C60:   WAIT_FOR_INPUT
+159C61:   IF NOT SELECTED DIALOG [(連合 - Coalition]  DO: 
+159C64:   JUMP96 159C9F
+159C67:   SET_DIALOG_OPTIONS HIDE 9 (ドラム - Drum) 
+159C6A:   PRINT この谷のすべての部族を連合させようとでも言うのか？
+-- ENGRISH: It does say even trying to federate all the tribes of this valley?
+159C9C:   JUMP8C 15A39E
+159C9F:   IF NOT SELECTED DIALOG [(アイエラ - Aiera]  DO: 
+159CA2:   JUMP96 159DD4
+159CA5:   SET_DIALOG_OPTIONS HIDE 5 (アイエラ - Aiera) 
+159CA8:   IF NOT BIT [AIERA_SAVED] DO: 
+159CAB:   JUMP96 159CE7
+159CAE:   PRINT わが娘アイエラを助けてくれたことは、一生、恩にきるぞ。
+-- ENGRISH: Is that it has helped my daughter Aiera, life, kill on.
+159CE4:   JUMP8C 159DD1
+159CE7:   PRINT 私の娘のアイエラが、隠れ里に住むウラリ族のバカデカ・ダーデンにさらわれてしまった。
+-- ENGRISH: Aiera of my daughter, had been kidnapped in Bakadeka-Darden of Urari tribe to Kakurezato.
+159D39:   LINE_BREAK
+159D3A:   PRINT 村の若い者が、ウラリの里を探しまわっているところだ。お前も、協力してくれるか？
+-- ENGRISH: Those young village, it has just that looking around the village of Urari. You also, or willing to cooperate?
+159D88:   LINE_BREAK
+159D89:   PRINT アイエラを助け出してくれたなら、このアロロンお前に一生感謝するぞ。
+-- ENGRISH: If you gave me rescued the Aiera, to thank this Aroron life to you.
+159DCB:   SET BIT [86 ]
+159DCE:   SET_DIALOG_OPTIONS SHOW 7 (トプルー - Topuru) 
+159DD1:   JUMP8C WAIT_FOR_INPUT
+159DD4:   IF NOT SELECTED DIALOG [(ウラリ - Urari]  DO: 
+159DD7:   JUMP96 159F3B
+159DDA:   SET_DIALOG_OPTIONS HIDE 7 (トプルー - Topuru) 
+159DDD:   PRINT バカデカ・ダーデンが酋長になるまでは、ウラリも平和な部族だった。
+-- ENGRISH: Bakadeka, Darden is until the chiefs, Urari was also peaceful tribe.
+159E1D:   LINE_BREAK
+159E1E:   LINE_BREAK
+159E1F:   IF NOT BIT [AIERA_SAVED] DO: 
+159E22:   JUMP96 159E6A
+159E25:   PRINT もうウラリには、なんの恨みもない。アイエラが帰ってきたのだからな。
+-- ENGRISH: And on the other Urari, nothing to resentment. We'll he came back Aiera.
+159E67:   JUMP8C 159F38
+159E6A:   PRINT ウラリ族は、何度となくこのクーラックの村を襲った。
+-- ENGRISH: Urari tribe, struck several times and without the village of this Kurakku.
+159E9C:   LINE_BREAK
+159E9D:   LINE_BREAK
+159E9E:   PRINT ヤツらはいつも、南東から攻めてくるのだが、ヤツらの村がどこにあるか誰も知らない。
+-- ENGRISH: Guys always, no one knows or is he coming attacking from the southeast, where to find the village of guys.
+159EEE:   LINE_BREAK
+159EEF:   PRINT ただひとり、祈とう師のトプルーが、その場所を知っているらしいんだが……
+-- ENGRISH: But alone, Topuru of prayer nurses, but I seems to know its location ......
+159F35:   SET_DIALOG_OPTIONS SHOW 8 (連合 - Coalition) 
+159F38:   JUMP8C WAIT_FOR_INPUT
+159F3B:   IF NOT SELECTED DIALOG [(トプルー - Topuru]  DO: 
+159F3E:   JUMP96 159FBA
+159F41:   SET_DIALOG_OPTIONS HIDE 8 (連合 - Coalition) 
+159F44:   PRINT ずっと昔に、ウラリ族の祈とう師をしていたのだが、頭がおかしくなってしまってな。
+-- ENGRISH: Long ago, I can, but have ended up amusing the head he had a prayer nurses of Urari group.
+159F92:   LINE_BREAK
+159F93:   PRINT いまでは、ずっと北の島に住んでいる。
+-- ENGRISH: Today, much we live in the north of the island.
+159FB7:   JUMP8C WAIT_FOR_INPUT
+159FBA:   IF NOT SELECTED DIALOG [(名前 - given names]  DO: 
+159FBD:   JUMP96 159FE4
+159FC0:   SET_DIALOG_OPTIONS HIDE 1 (名前 - given names) SHOW 5 (アイエラ - Aiera) 
+159FC4:   PRINT アロロン。アイエラの父だ。
+-- ENGRISH: Aroron. It's the father of Aiera.
+159FDE:   SET BIT [85 ]
+159FE1:   JUMP8C WAIT_FOR_INPUT
+159FE4:   IF NOT SELECTED DIALOG [(仕事 - Work]  DO: 
+159FE7:   JUMP96 15A03C
+159FEA:   SET_DIALOG_OPTIONS HIDE 2 (仕事 - Work) SHOW 4 (ミルミデックス - Mirumidekkusu) 
+159FEE:   PRINT 戦士だ！
+-- ENGRISH: I warrior!
+159FF6:   LINE_BREAK
+159FF7:   PRINT そして、クーラックの酋長として、若い戦士と、ミルミデックスと戦う。
+-- ENGRISH: And, as chief of Kurakku, and the young warrior, and fighting Mirumidekkusu.
+15A039:   JUMP8C WAIT_FOR_INPUT
+15A03C:   IF NOT SELECTED DIALOG [(ミルミデックス - Mirumidekkusu]  DO: 
+15A03F:   JUMP96 15A0E3
+15A042:   SET_DIALOG_OPTIONS HIDE 4 (ミルミデックス - Mirumidekkusu) 
+15A045:   PRINT ミルミデックス！
+-- ENGRISH: Mirumidekkusu!
+15A055:   LINE_BREAK
+15A056:   PRINT 巨大なアリだ゛
+-- ENGRISH: A giant ant ゛
+15A064:   LINE_BREAK
+15A065:   PRINT 西のほうに行けば、ヤツらの話がある。
+-- ENGRISH: If you go towards the west, there are the guys talk.
+15A089:   LINE_BREAK
+15A08A:   PRINT 村を襲っては人を思う。しかも、願から願聞と生まれるから、いくら戦ってもきりがないのだ。
+-- ENGRISH: I think the people will be hit the village. Moreover, because born from cancer and Gan聞, it is not cut even fighting much.
+15A0E0:   JUMP8C WAIT_FOR_INPUT
+15A0E3:   IF NOT SELECTED DIALOG [(部族 - Tribe]  DO: 
+15A0E6:   JUMP96 15A1F2
+15A0E9:   SET_DIALOG_OPTIONS HIDE 3 (部族 - Tribe) SHOW 6 (ヨラルー - Yoraru) 
+15A0ED:   PRINT この谷には、たくさんの部族が生安している。クーラック族だ。
+-- ENGRISH: The valley, a lot of tribes are Nama-yasu. I Kurakku group.
+15A127:   LINE_BREAK
+15A128:   LINE_BREAK
+15A129:   PRINT ほかには、ヨラルー、
+-- ENGRISH: In addition, it Yoraru,
+15A13D:   LINE_BREAK
+15A13E:   PRINT デ心味味、方の村に住む太ウアトラ。もっとずっと陽く聞行くと……
+-- ENGRISH: De Kokoro-miaji, thick Uatora living in the village Kata. Much more to positive rather than listen to go with ......
+15A17C:   LINE_BREAK
+15A17D:   PRINT 北には焼ンデ心ロとバラ泥、南東には沼続カリと百年人歩ークール。
+-- ENGRISH: Baked down de-centered to the north Russia and roses mud, swamp in the southeast continued potash and a hundred years people walking Kuru.
+15A1BB:   LINE_BREAK
+15A1BC:   LINE_BREAK
+15A1BD:   PRINT 南西にはバラッ争とトカ止人問の題ックラー族がいる。
+-- ENGRISH: Title Kkura tribe are of Bara~tsu war and trocar stop people question in the southwest.
+15A1EF:   JUMP8C WAIT_FOR_INPUT
+15A1F2:   IF NOT SELECTED DIALOG [(ヨラルー - Yoraru]  DO: 
+15A1F5:   JUMP96 15A234
+15A1F8:   SET_DIALOG_OPTIONS HIDE 6 (ヨラルー - Yoraru) 
+15A1FB:   PRINT この村の東に、ヨラルー族の村がある。酋長はア解トンだ。
+-- ENGRISH: To the east of this village, there is a village of Yoraru group. Chief's A solution tons.
+15A231:   JUMP8C WAIT_FOR_INPUT
+15A234:   IF NOT SELECTED DIALOG [(ドラム - Drum]  DO: 
+15A237:   JUMP96 15A328
+15A23A:   SET_DIALOG_OPTIONS HIDE 10 (連合 - Coalition) 
+15A23D:   PRINT 決む。信頼の小大なるドラムのことか？
+-- ENGRISH: Kemmu. Is it a small large drum made of trust?
+15A261:   LINE_BREAK
+15A262:   PRINT それは陽い昔、どの部族にも上さない集ロロという無が、太ウアトラの参かくの加に、小大なるドラムを?ったという?だ。
+-- ENGRISH: It caught a long time ago, no-that above Sanayi collection Lolo to any tribe, to the pressurized San corner of the thick Uatora, I say that Tsu a small large-made drum.
+15A2D2:   LINE_BREAK
+15A2D3:   IF NOT BIT [KNOWS_DRUM_IS_NEEDED_1] DO: 
+15A2D6:   JUMP96 15A325
+15A2D9:   PRINT この谷の部族を連合させたいと?うなら、お前も小大なるドラムを?らねばならん。
+-- ENGRISH: You can easily find Ito was federated tribes of this valley, you do have to Raney small large become drum.
+15A325:   JUMP8C WAIT_FOR_INPUT
+15A328:   IF NOT SELECTED DIALOG [(さようなら - goodbye]  DO: 
+15A32B:   JUMP96 15A39E
+15A32E:   SET BIT [85 ]
+15A331:   IF NOT BIT [AIERA_SAVED] DO: 
+15A334:   JUMP96 15A36A
+15A337:   PRINT またいつでも来い。お前は私の恩人。いつでも歓迎だ。
+-- ENGRISH: Also, Come anytime. You are my benefactor. You're always welcome.
+15A369:   (BLANK)
+15A36A:   IF NOT BIT [KNOWS_KURAK_NEED] DO: 
+15A36D:   JUMP96 15A395
+15A370:   PRINT さあ、行け！
+-- ENGRISH: Come on, go!
+15A37C:   LINE_BREAK
+15A37D:   PRINT アイエラを探すのだ゛
+-- ENGRISH: Look for Aiera ゛
+15A391:   SET BIT [86 ]
+15A394:   (BLANK)
+15A395:   PRINT 決む……
+-- ENGRISH: Kemmu ......
+15A39D:   (BLANK)
+15A39E:   *CA*
+15A39F:   *CB*
+15A3A0:   *A5*
+15A3A1:   *A3*
+15A3A2:   JUMP8C 15A3CF
+15A3A5:   *CC*
+15A3A6:   *CF*
+15A3A7:   *A3*
+15A3A8:   PRINT ならば、お前に?すことはなにもない。
+-- ENGRISH: If, nothing is that it be to you.
+15A3CC:   JUMP8C WAIT_FOR_INPUT
+15A3CF:   IF NOT BIT [AIERA_SAVED] DO: 
+15A3D2:   JUMP96 15A457
+15A3D5:   PRINT すべての部族を連合させようと?うならば、ほかの部族の酋長の?いも?いてやることだ。
+-- ENGRISH: A person of ordinary attempt to federate all the tribes, the thing I'll Imo-i chief of the other tribe.
+15A427:   LINE_BREAK
+15A428:   PRINT ??しろ。クーラック族は、もうお前の??だ。
+-- ENGRISH: White. Kurakku family, but another you of.
+15A454:   JUMP8C 15A71A
+15A457:   SET_DIALOG_OPTIONS SHOW 7 (トプルー - Topuru) SHOW 10 (連合 - Coalition) 
+15A45B:   SET BIT [B1 ]
+15A45E:   SET BIT [86 ]
+15A461:   PRINT アバタール、??に頭を?かれたか？
+-- ENGRISH: Avatar, or was he the head?
+15A483:   LINE_BREAK
+15A484:   PRINT この谷の部族は、??のような戦いを?けているのだぞ。もう何??もな。たしかに、集ロロの信頼では、すべての部族が連合したことがあると信えているが……。大きなトカ止がたくさん?いていたころの?だ。集ロロは部族問の戦?を?めさせるために、すべての酋長にあって、かれらがかかえていた??を、ひとつひとつ??してやった。すべての??を??し、酋長た参の??をえた集ロロは、太ウアトラの北の?さな加の?に、小大なるドラムを?った。集ロロがそれをたたくと、すべての部族の戦士た参が?まり、力を合わせて大トカ止どもと戦ったのだ。
+-- ENGRISH: Tribe of this valley, and he has to fight only been like. I anything anymore. Certainly, in the confidence of the current Lolo, but all the tribes are example Shin If there is a thing that Union is .... It's the time when large trocar stop had a lot. Collection Lolo in order to Mesa war tribal question, in the all chiefs, their was having, it was doing it one by one. All of it was, the collection to give a the participants it was Chief Lolo is, in addition Sana north of thick Uatora, was Tsu a small large-made drum. When the collection Lolo is hit it, and he participated it was warrior of all the tribes fought Mari, joined forces with the Dadu River stop conducted our.
+15A684:   LINE_BREAK
+15A685:   PRINT 私の??がほしければ、ウラリ族にさらわれたアイエラを助け出すことだ。
+-- ENGRISH: If the mine is you want a, we can rescue the Aiera that was kidnapped in Urari group.
+15A6C9:   LINE_BREAK
+15A6CA:   PRINT もし、?事にアイエラを連れて帰ることができたら、私はお前の部族連合に??しよう。
+-- ENGRISH: If I can go home and take a Aiera to things, I try to you of tribal coalition.
+15A71A:   JUMP8C WAIT_FOR_INPUT
+15A71D:   
+ 
+
+Intro:
+
+if (81){
+	SET_DIALOG_OPTIONS SHOW 9 (ドラム - Drum) 
+}
+if (!85){
+	 Avatar yo, or woke up. You are, it is done in Darden, I was sleeping much.
+	 Aiera had been kidnapped in Darden.
+	 if (!AIERA_SAVED){
+	 	It looks like the wound became quite well If you look at the place where you are firmly standing in front of the chief of Kurakku.
+	 	So, it's no use?
+	 } else {
+	 	SET 86
+	 	You gave me rescued my daughter, the Aiera. As chief of this village, and thanks to you, welcome as friends.
+	 }
+} else {
+	if (!AIERA_SAVED){
+		if (!KNOWS_KURAK_NEED){
+			Avatar!
+			Well it came. Welcome.
+		} else {
+			And though not even rescued the Aiera, it is, it's why did come back to this village?
+			Heck, it's what iodide?
+		}
+	} else {
+		SET 86
+		Oh, Avatar. Benefactor of Aiera!
+		You're the best customers in the village ゛
+	}
+}
+
+
+
+0x00 IF NOT A THEN
+0x01 JUMP 0x04
+0x02 PRINT A
+0x03 JUMP 0x05
+0x04 PRINT B
+0x05 PRINT C
+
+IF A THEN
+ PRINT A
+ELSE
+ PRINT B
+ENDIF
+PRINT C

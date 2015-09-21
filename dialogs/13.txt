@@ -1,0 +1,96 @@
+-- DIALOG 13
+-- ?
+-- CHARSET　����はいえ名前仕事かあちゃん部族トプルーピンディロさようならっ、世界でば強くてこ戦士だ！すごおじ助けに来れたのね゛ハリサと競争しまょ？近道知。が見る待げほ先行願早ぇ（彼女キミ顔をみ頬染め）立派バラコ酋長勉ワ言谷北２つひ村大ザ崖南側滝湖そりず昔ど西小島住祈師も話
+160000:   LOAD_DIALOG_OPTIONS 02A7(名前) 02A8(仕事) 02A9(かあちゃん) 02AA(部族) 02AB(トプルー) 02AC(ピンディロ) 
+16000F:   IF NOT BIT [A8] DO: 
+160012:   JUMP96 16010B
+160015:   IF NOT BIT [A7] DO: 
+160018:   JUMP96 16004E
+16001B:   PRINT あっ、世界でいちばん強くてかっこいい戦士さんだ！
+-- ENGRISH: Oh, it's the cool warrior's is most strongly in the world!
+16004B:   JUMP8C 160108
+16004E:   SET BIT [A7]
+160051:   PRINT すごーい！
+-- ENGRISH: great!
+16005B:   LINE_BREAK
+16005C:   PRINT おじさん、助けに来てくれたのね゛
+-- ENGRISH: Uncle, I did came to help ゛
+16007C:   LINE_BREAK
+16007D:   LINE_BREAK
+16007E:   PRINT ねえ、ハリサと競争しましょ？
+-- ENGRISH: Hey, it's to compete with Harisa?
+16009A:   LINE_BREAK
+16009B:   PRINT あたし、すごい近道知ってんだ。
+-- ENGRISH: I, I know great shortcut.
+1600B9:   LINE_BREAK
+1600BA:   PRINT おじさんが見えなくなるまで、ここで待っててあげるから。ほら、先に行っていいよ！
+-- ENGRISH: Uncle until no longer visible, because I'll waiting here. You know, it's good to go ahead!
+160108:   JUMP8C 160127
+16010B:   PRINT お願い！
+-- ENGRISH: I beg you!
+160113:   LINE_BREAK
+160114:   PRINT 早く助けてぇー゛
+-- ENGRISH: Early to help want to over ゛
+160124:   JUMP8C 16012C
+160127:   SET_DIALOG_OPTIONS SHOW 1 (名前 - given names) SHOW 2 (仕事 - Work) SHOW 4 (部族 - Tribe) 
+16012C:   WAIT_FOR_INPUT
+16012D:   IF NOT SELECTED DIALOG [(名前 - given names)  DO: 
+160130:   JUMP96 16016E
+160133:   SET_DIALOG_OPTIONS HIDE 1 (名前 - given names) 
+160136:   PRINT ハリサよ！
+-- ENGRISH: Harisa!
+160140:   LINE_BREAK
+160141:   PRINT （彼女はキミの顔をみてちょっと頬を染めた）
+-- ENGRISH: (She was a little dyed the cheek and watched you face)
+16016B:   JUMP8C WAIT_FOR_INPUT
+16016E:   IF NOT SELECTED DIALOG [(仕事 - Work)  DO: 
+160171:   JUMP96 1601C1
+160174:   SET_DIALOG_OPTIONS HIDE 2 (仕事 - Work) SHOW 3 (かあちゃん - Mom) 
+160178:   PRINT ハリサ、かあちゃんみたいに立派なバラコ族の酋長になる勉強してるんだよ。
+-- ENGRISH: Harisa, I'm studying to become a chief of respectable Barako group like a Mom.
+1601BE:   JUMP8C WAIT_FOR_INPUT
+1601C1:   IF NOT SELECTED DIALOG [(かあちゃん - Mom)  DO: 
+1601C4:   JUMP96 160209
+1601C7:   SET_DIALOG_OPTIONS HIDE 3 (かあちゃん - Mom) 
+1601CA:   PRINT バラコ族の酋長だよ。ハラワって言うんだ。ハリサのかあちゃん！
+-- ENGRISH: It's chief of group Barako. I do say I Halawa. Mom of Harisa!
+160206:   JUMP8C WAIT_FOR_INPUT
+160209:   IF NOT SELECTED DIALOG [(部族 - Tribe)  DO: 
+16020C:   JUMP96 1602D1
+16020F:   SET_DIALOG_OPTIONS HIDE 4 (部族 - Tribe) SHOW 6 (ピンディロ - Pindiro) SHOW 5 (トプルー - Topuru) 
+160214:   PRINT 谷の北には２つの部族があるんだ。ひとつはハリサの部族、バラコ族。村は、あの大ザルの崖の南側だよ。北に行くと、ピンディロ族の村がある。滝のある湖のとこだよ。あ、そうだ。トプルーさんがいた。
+-- ENGRISH: It's in the valley of the north there are two tribes. Tribe of one Harisa, Group Barako. The village's south side of the cliff that large colander. If you go to the north, there is a village of Pindiro group. It is Toko of the lake with a waterfall. Oh, it's so. Topuru san had.
+1602CE:   JUMP8C WAIT_FOR_INPUT
+1602D1:   IF NOT SELECTED DIALOG [(ピンディロ - Pindiro)  DO: 
+1602D4:   JUMP96 16035D
+1602D7:   SET_DIALOG_OPTIONS HIDE 6 (ピンディロ - Pindiro) 
+1602DA:   PRINT ピンディロ族のことは、あんまりよく知らない。
+-- ENGRISH: Things Pindiro family, I do not know so much better.
+160306:   LINE_BREAK
+160307:   LINE_BREAK
+160308:   PRINT ずっと昔から、バラコ族とピンディロ族は戦争してたんだって。どうしてか知らないけど。
+-- ENGRISH: Ever since ancient times, Barako group and Pindiro family Even've been at war. I do not know why.
+16035A:   JUMP8C WAIT_FOR_INPUT
+16035D:   IF NOT SELECTED DIALOG [(トプルー - Topuru)  DO: 
+160360:   JUMP96 1603B3
+160363:   SET_DIALOG_OPTIONS HIDE 5 (トプルー - Topuru) 
+160366:   PRINT バラコの村の西の湖にある小さな島で、ひとりで住んでる祈とう師のおじさんよ。
+-- ENGRISH: A small island in the Nishinoko village of Barako, uncle of prayer nurses who live alone.
+1603B0:   JUMP8C WAIT_FOR_INPUT
+1603B3:   IF NOT SELECTED DIALOG [(さようなら - goodbye)  DO: 
+1603B6:   JUMP96 160417
+1603B9:   IF NOT BIT [A8] DO: 
+1603BC:   JUMP96 1603F3
+1603BF:   PRINT もう行っちゃうの？
+-- ENGRISH: Will you go now?
+1603D1:   LINE_BREAK
+1603D2:   PRINT また来て、ハリサとお話してね！
+-- ENGRISH: Also to come, we have to talk with Harisa!
+1603F0:   JUMP8C 160416
+1603F3:   PRINT あのサルをなんとかしてよ！
+-- ENGRISH: And somehow at that monkey!
+16040D:   LINE_BREAK
+16040E:   PRINT お願い゛
+-- ENGRISH: Please ゛
+160416:   (BLANK)
+160417:   

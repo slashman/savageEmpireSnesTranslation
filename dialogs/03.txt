@@ -1,0 +1,195 @@
+-- DIALOG 3
+-- Aroron. Chief of the Kurak
+-- CHARSET　����はいえさようならあたし、ドラムだー好きの！んも？クッ族入れてげゃ。ウリオケとくちヨルお願聞バブ酋長を助けディスキハ取っょコピンロに話ジュカナアト仲間するサ気つねタがば見丘まわり（べ部代表集）伝説そミ退治協同作戦立必要各村巣穴中心攻撃前女王倒こ持祈師でひ武器発使か用呼意精霊運連合何忘…
+159517:   LOAD_DIALOG_OPTIONS 
+15951A:   IF NOT BIT [ASKED_DOKREI_ABOUT_UNION] DO: 
+15951D:   *97*
+15951E:   *51*
+15951F:   *95*
+159520:   LOAD_PORTRAIT 00
+159522:   LINE_BREAK
+159523:   PRINT あたし、ドラムだーい好きなのよ！
+-- ENGRISH: I, No you like drum Da-i!
+159543:   LINE_BREAK
+159544:   PRINT あんたも？
+-- ENGRISH: Anta also?
+15954E:   JUMP8C 159767
+159551:   IF NOT BIT [AIERA_SAVED_KURAK_JOINED_UNION] DO: 
+159554:   *97*
+159555:   *7D*
+159556:   *95*
+159557:   *8A*
+159558:   *D9*
+159559:   *99*
+15955A:   PRINT クーラック族も入れてあげなきゃ。
+-- ENGRISH: Kurakku group also must give put.
+15957A:   JUMP8C 159767
+15957D:   IF NOT BIT [E7] DO: 
+159580:   IF NOT BIT [E8] DO: 
+159583:   IF NOT BIT [E6] DO: 
+159586:   SKIP 00
+159588:   SKIP 00
+15958A:   *97*
+15958B:   *B5*
+15958C:   *95*
+15958D:   *8A*
+15958E:   *D9*
+15958F:   *99*
+159590:   PRINT ウラリ族のオーケーもとらなくちゃ。
+-- ENGRISH: I have to also take okay of Urari group.
+1595B2:   JUMP8C 159767
+1595B5:   IF NOT BIT [YOLARU_JOINED_UNION] DO: 
+1595B8:   *97*
+1595B9:   *E9*
+1595BA:   *95*
+1595BB:   *8A*
+1595BC:   *D9*
+1595BD:   *99*
+1595BE:   PRINT ヨラルー族のお願いも聞いてあげなくちゃ。
+-- ENGRISH: Yoraru group of hope also we have to give to hear.
+1595E6:   JUMP8C 159767
+1595E9:   IF NOT BIT [BARRAB_JOINED_UNION] DO: 
+1595EC:   *97*
+1595ED:   *1F*
+1595EE:   JUMP96 15D98A
+1595F1:   *99*
+1595F2:   PRINT バラッブ族の酋長さんを助けてあげなくちゃ。
+-- ENGRISH: I have to give to help the chief's Barabbu group.
+15961C:   JUMP8C 159767
+15961F:   IF NOT BIT [DISKIKI_JOINED_UNION] DO: 
+159622:   *97*
+159623:   *49*
+159624:   JUMP96 15D98A
+159627:   *99*
+159628:   PRINT ディスキキ族も入れてあげてよ。
+-- ENGRISH: In Disukiki group also give put.
+159646:   JUMP8C 159767
+159649:   IF NOT BIT [A3] DO: 
+15964C:   *97*
+15964D:   *7F*
+15964E:   JUMP96 15D98A
+159651:   *99*
+159652:   PRINT ハークール族のオーケーも取ってちょうだい。
+-- ENGRISH: Give me to take also okay of Hakuru group.
+15967C:   JUMP8C 159767
+15967F:   IF NOT BIT [A7] DO: 
+159682:   *97*
+159683:   *AF*
+159684:   JUMP96 15D98A
+159687:   *99*
+159688:   PRINT バラコ族のお願いも聞いてあげなきゃ。
+-- ENGRISH: Barako group of hope even if it is not raised to hear.
+1596AC:   JUMP8C 159767
+1596AF:   IF NOT BIT [INARA_EXPLAINED_ALREADY_WHY_PINDIRO_JOINS_UNION] DO: 
+1596B2:   *97*
+1596B3:   *E1*
+1596B4:   JUMP96 15D98A
+1596B7:   *99*
+1596B8:   PRINT ピンディロ族の酋長さんにお話しなきゃ。
+-- ENGRISH: If you do not talk to the chief's family Pindiro.
+1596DE:   JUMP8C 159767
+1596E1:   IF NOT BIT [B7] DO: 
+1596E4:   *97*
+1596E5:   *0B*
+1596E6:   *97*
+1596E7:   *8A*
+1596E8:   *D9*
+1596E9:   *99*
+1596EA:   PRINT ジュカリ族も、入れてあげてよ。
+-- ENGRISH: Jukari group also, by give put.
+159708:   JUMP8C 159767
+15970B:   IF NOT BIT [C4] DO: 
+15970E:   *97*
+15970F:   *35*
+159710:   *97*
+159711:   *8A*
+159712:   *D9*
+159713:   *99*
+159714:   PRINT ナウアトラ族も仲間にするのよ。
+-- ENGRISH: Nauatora group is also No to fellow.
+159732:   JUMP8C 159767
+159735:   IF NOT BIT [D3] DO: 
+159738:   *97*
+159739:   *64*
+15973A:   *97*
+15973B:   *8A*
+15973C:   *D9*
+15973D:   *99*
+15973E:   PRINT サックラー族も入れてあげなきゃ。
+-- ENGRISH: Sackler family also must give put.
+15975E:   JUMP8C 159767
+159761:   JUMP8C 159767
+159764:   JUMP8C 1597A3
+159767:   WAIT_FOR_INPUT
+159768:   IF NOT SELECTED DIALOG [(さようなら - goodbye)  DO: 
+15976B:   JUMP96 1597A3
+15976E:   IF NOT BIT [E1] DO: 
+159771:   JUMP96 159794
+159774:   LOAD_PORTRAIT E9
+159776:   *00*
+159777:   PRINT 気をつけてね、アバタール。
+-- ENGRISH: Be careful, Avatar.
+159791:   JUMP8C 1597A2
+159794:   PRINT がんばってね！
+-- ENGRISH: Do your best!
+1597A2:   (BLANK)
+1597A3:   LOAD_PORTRAIT 00
+1597A5:   LINE_BREAK
+1597A6:   PRINT 見てよ見てよ！
+-- ENGRISH: And a look at yo look!
+1597B4:   LINE_BREAK
+1597B5:   PRINT 丘のまわり！
+-- ENGRISH: Around the hill!
+1597C1:   LINE_BREAK
+1597C2:   PRINT （すべての部族の代表が、ドラムの丘に集まってくる）
+-- ENGRISH: (Representatives of all the tribes, gather in the hills of the drum)
+1597F4:   LINE_BREAK
+1597F5:   LOAD_PORTRAIT 00
+1597F7:   LINE_BREAK
+1597F8:   PRINT オロロの伝説に、そっくりだわ！
+-- ENGRISH: The legend of Ororo, it's just like!
+159816:   *02*
+159817:   LOAD_PORTRAIT DB
+159819:   *00*
+15981A:   PRINT ミルミデックスを退治するには、協同作戦を立てる必要がある。
+-- ENGRISH: To exterminate Mirumidekkusu, it is necessary to develop a cooperative strategy.
+159854:   LINE_BREAK
+159855:   LINE_BREAK
+159856:   LOAD_PORTRAIT DB
+159858:   *00*
+159859:   PRINT 各部族は、村のそばの巣穴を中心にミルミデックスを攻撃する。お前は、巣穴に入り、女王を倒すのだ。
+-- ENGRISH: Each tribe, to attack the Mirumidekkusu around the burrow near the village. You enters the nest hole, it beats the queen.
+1598B7:   *02*
+1598B8:   LOAD_PORTRAIT F6
+1598BA:   *00*
+1598BB:   PRINT これを持っていけ。
+-- ENGRISH: You should have this.
+1598CD:   LINE_BREAK
+1598CE:   PRINT すべての部族の祈とう師が集まって、女王を倒すことのできる、ただひとつの武器
+-- ENGRISH: Prayer nurses of all the tribes gathered, that can defeat the queen, only one weapon
+159918:   LOAD_PORTRAIT F6
+15991A:   *00*
+15991B:   PRINT を作った。女王を発見したら、これを使うのだ。
+-- ENGRISH: The made. If you find a queen, and I use it.
+159947:   *02*
+159948:   LOAD_PORTRAIT 00
+15994A:   LINE_BREAK
+15994B:   PRINT あたしはここにいるからね。用があったら、いつでも呼んでちょうだい。
+-- ENGRISH: I'll I'm here. If you have any use, Give me to call at any time.
+15998D:   *02*
+15998E:   LOAD_PORTRAIT E9
+159990:   *00*
+159991:   PRINT 用意がよければ、精霊にお願いして、お前を巣穴のなかに運んでもらう。
+-- ENGRISH: If you're prepared is, ask the spirits, you are getting carried Some burrows.
+1599D3:   SET BIT [E1]
+1599D6:   JUMP8C WAIT_FOR_INPUT
+1599D9:   LOAD_PORTRAIT 00
+1599DB:   LINE_BREAK
+1599DC:   PRINT 部族連合を作りたいの？何か忘れてない？
+-- ENGRISH: You want to make a tribal coalition? Do not forget something?
+159A02:   LINE_BREAK
+159A03:   PRINT えっと……
+-- ENGRISH: um……
+159A0D:   LINE_BREAK
+159A0E:   *89*
+159A0F:   

@@ -1,0 +1,404 @@
+-- DIALOG 1
+-- Eodon Exploration Record by Jimmy
+-- CHARSET　����はいえツオマックスーラヨルバブディキ２ペジ目ハコピンロュカリナウアト３サおしまイド探検記録ミ・…もくじ（どこを読む？）あたのかなム職人。つってみりろそう物だＪ．Ｍ伝説れＡ作る必要が、によと材料ほ部族酋長きら連合させ村へダエ救出参加めわ娘す間知パ剣５本約束黒石やご聞チャフ言病気息子薬命ひ大台地上生赤花根！んでグ願テノベけ教盾取ゴモ洞戻レザワ依頼女シポ彼ぐ火山中゛聖皮一友協力溶岩ボタ王退治追放座ば戦争ビゲメズ事ぞづ謎守神ァ像倒プ隠帳背
+158000:   LOAD_DIALOG_OPTIONS 823B(?) 823C(?) 823D(?) 823E(バラッブ) 823F(ディスキキ) 
+15800D:   LOAD_MORE_DIALOG_OPTIONS 0241(ハークール) 0242(バラコ) 0243(ピンディロ) 0244(ジュカリ) 0245(ナウアトラ) 
+15801A:   LOAD_MORE_DIALOG_OPTIONS 0247(サックラー) 0248(ウラリ) 
+158021:   PRINT イーオドン探検記録
+-- ENGRISH: Iodon exploration record
+158033:   LINE_BREAK
+158034:   PRINT ジミー・マローン
+-- ENGRISH: Jimmy Malone
+158044:   LINE_BREAK
+158045:   PRINT ……もくじ……
+-- ENGRISH: ...... Table of Contents ......
+158053:   LINE_BREAK
+158054:   PRINT （どこを読む？）
+-- ENGRISH: (Where I can read?)
+158064:   WAIT_FOR_INPUT
+158065:   IF NOT SELECTED DIALOG [(?)  DO: 
+158068:   JUMP96 1581E5
+15806B:   SET_DIALOG_OPTIONS HIDE 1 (バラッブ - Barabbu) 
+15806E:   PRINT ツオマックスはあたまのおかしなドラム職人。いつかあってみたい。
+-- ENGRISH: Tsuomakkusu is funny drum craftsman of the head. I'd like to meet someday.
+1580AC:   LINE_BREAK
+1580AD:   LINE_BREAK
+1580AE:   PRINT かなりおもしろそうな人物だ。Ｊ．Ｍ．
+-- ENGRISH: It's pretty interesting person. J. M.
+1580D2:   LINE_BREAK
+1580D3:   LINE_BREAK
+1580D4:   LINE_BREAK
+1580D5:   IF NOT BIT [E2] DO: 
+1580D8:   IF NOT BIT [E3] DO: 
+1580DB:   SKIP 00
+1580DD:   JUMP96 15811F
+-- IF !E2 && E3
+1580E0:   PRINT ドラム職人のツオマックス。伝説のドラムをつくってくれた。Ａ．
+-- ENGRISH: Tsuomakkusu of drum craftsman. It made me a drum of legend. A.
+15811C:   JUMP8C WAIT_FOR_INPUT
+15811F:   IF NOT BIT [E2] DO: 
+158122:   IF NOT BIT [63] DO: 
+158125:   SKIP 00
+158127:   JUMP96 15817D
+-- IF !E2 && 63
+15812A:   PRINT 伝説のドラムを作る必要あり。だが、ツオマックスによると、材料がないとのこと。Ａ．
+-- ENGRISH: There is need to create a drum of legend. But, according to the Tsuomakkusu, that the material is not. A.
+15817A:   JUMP8C WAIT_FOR_INPUT
+15817D:   IF NOT BIT [B1] DO: 
+158180:   JUMP96 1581E2
+-- IF E2 && B1
+158183:   PRINT ドラムを作る必要あり。ほかの部族の酋長のいうことをきいたら、これをたたいて、連合させる。Ａ．
+-- ENGRISH: There is need to create a drum. When you hear that you say chief of another tribe, by tapping this, to Union. A.
+1581DF:   JUMP8C WAIT_FOR_INPUT
+1581E2:   JUMP8C WAIT_FOR_INPUT
+1581E5:   IF NOT SELECTED DIALOG [(?)  DO: 
+1581E8:   JUMP96 158301
+1581EB:   SET_DIALOG_OPTIONS HIDE 2 (ディスキキ - Disukiki) 
+1581EE:   PRINT まだ、クーラック族の村へはいったことがない。Ｊ．Ｍ．
+-- ENGRISH: Still, it has never entered the village of Kurakku group. J. M.
+158222:   LINE_BREAK
+158223:   LINE_BREAK
+158224:   IF NOT BIT [KNOWS_KURAK_NEED] DO: 
+158227:   IF NOT BIT [AIERA_SAVED_KURAK_JOINED_UNION] DO: 
+15822A:   SKIP 00
+15822C:   JUMP96 158292
+15822F:   PRINT バカデカ・ダーデンよりアイエラを救出。クーラック族のアロロンは、部族連合への参加をみとめた。Ａ．
+-- ENGRISH: The rescue Aiera than Bakadeka-Darden. Aroron of Kurakku family, admitted participation in the tribal coalition. A.
+15828F:   JUMP8C WAIT_FOR_INPUT
+158292:   IF NOT BIT [KNOWS_KURAK_NEED] DO: 
+158295:   IF NOT BIT [KURAK_SOMETHING] DO: 
+158298:   SKIP 00
+15829A:   JUMP96 1582FE
+15829D:   PRINT クーラック族のアロロン酋長より。バカデカ・ダーデンにさらわれた娘のアイエラの救出すること。Ａ．
+-- ENGRISH: Than Kurakku group of Aroron chief. Daughter of Aiera to rescue that of that has been kidnapped in Bakadeka-Darden. A.
+1582FB:   JUMP8C WAIT_FOR_INPUT
+1582FE:   JUMP8C WAIT_FOR_INPUT
+158301:   IF NOT SELECTED DIALOG [(?)  DO: 
+158304:   JUMP96 1583E9
+158307:   SET_DIALOG_OPTIONS HIDE 3 (ハークール - Hakuru) 
+15830A:   PRINT ディスキキの人間は、ヨラルー族のことはよく知らないみたいだ。Ｊ．Ｍ．
+-- ENGRISH: Human Disukiki is, seems not well-known is that of Yoraru group. J. M.
+15834E:   LINE_BREAK
+15834F:   LINE_BREAK
+158350:   IF NOT BIT [KNOWS_YOLARU_NEED] DO: 
+158353:   IF NOT BIT [YOLARU_JOINED_UNION] DO: 
+158356:   SKIP 00
+158358:   JUMP96 158392
+15835B:   PRINT アパトン酋長に剣を５本わたす。約束は、はたした。Ａ．
+-- ENGRISH: Five a sword to Apaton chiefs I pass. Promise, we played. A.
+15838F:   JUMP8C WAIT_FOR_INPUT
+158392:   IF NOT BIT [KNOWS_YOLARU_NEED] DO: 
+158395:   IF NOT BIT [YOLARU_SOMETHING] DO: 
+158398:   SKIP 00
+15839A:   JUMP96 1583E6
+15839D:   PRINT アパトン酋長は、黒い石の剣を５本ほしがっている。おやすいごようだ。Ａ．
+-- ENGRISH: Apaton chiefs are five wanting the sword of black stone. It's your as your easy. A.
+1583E3:   JUMP8C WAIT_FOR_INPUT
+1583E6:   JUMP8C WAIT_FOR_INPUT
+1583E9:   IF NOT SELECTED DIALOG [(バラッブ - Barabbu)  DO: 
+1583EC:   JUMP96 15850E
+1583EF:   SET_DIALOG_OPTIONS HIDE 4 (バラコ - Barako) 
+1583F2:   PRINT バラッブのことは聞くなと、チャフブラムに言われてしまった。Ｊ．Ｍ．
+-- ENGRISH: Things Barabbu is and dont listen, had been told to Chafuburamu. J. M.
+158434:   LINE_BREAK
+158435:   LINE_BREAK
+158436:   IF NOT BIT [KNOWS_BARRAB_NEED] DO: 
+158439:   IF NOT BIT [BARRAB_JOINED_UNION] DO: 
+15843C:   SKIP 00
+15843E:   JUMP96 158494
+158441:   PRINT 病気の息子にあたえる薬をとってきた。バラカイ酋長は、連合に加わると約束する。Ａ．
+-- ENGRISH: I've been taking a medicine to be supplied to the son of the disease. Barakai chiefs, to promise to join the Union. A.
+158491:   JUMP8C WAIT_FOR_INPUT
+158494:   IF NOT BIT [KNOWS_BARRAB_NEED] DO: 
+158497:   IF NOT BIT [BARRAB_SOMETHING] DO: 
+15849A:   SKIP 00
+15849C:   JUMP96 15850B
+15849F:   PRINT バラカイ酋長の息子ナカイの命を救う、ただひとつの薬は……
+-- ENGRISH: To save the life of the son Nakai of Barakai chiefs, only one of medicine ......
+1584D7:   LINE_BREAK
+1584D8:   LINE_BREAK
+1584D9:   PRINT 大いなる台地の上に生えている赤い花の根だ。
+-- ENGRISH: It is a red flower of the root that grows on top of the great plateau.
+158503:   LINE_BREAK
+158504:   PRINT Ａ．
+-- ENGRISH: A.
+158508:   JUMP8C WAIT_FOR_INPUT
+15850B:   JUMP8C WAIT_FOR_INPUT
+15850E:   IF NOT SELECTED DIALOG [(ディスキキ - Disukiki)  DO: 
+158511:   JUMP96 15866D
+158514:   SET_DIALOG_OPTIONS HIDE 5 (ピンディロ - Pindiro) 
+158517:   PRINT この部族は、いかれている！
+-- ENGRISH: This tribe is squid!
+158531:   LINE_BREAK
+158532:   PRINT なんにもしないで、ダラダラすごしている。
+-- ENGRISH: Do not Nan'nimo, are spent lazy.
+15855A:   LINE_BREAK
+15855B:   PRINT それにあの、グオブラムだ……！?Ｊ．Ｍ．
+-- ENGRISH: And that, ... but Guoburamu! J. M.
+158583:   LINE_BREAK
+158584:   LINE_BREAK
+158585:   LINE_BREAK
+158586:   IF NOT BIT [KNOWS_DISKIKI_NEED] DO: 
+158589:   IF NOT BIT [DISKIKI_JOINED_UNION] DO: 
+15858C:   SKIP 00
+15858E:   JUMP96 158600
+158591:   PRINT ディスキキの溶いを聞いて、岩ィラボサウルスにタルをつ王た。
+-- ENGRISH: To hear Toys of Disukiki, it was the king One of the barrel to rock ~Irabosaurusu.
+1585CB:   LINE_BREAK
+1585CC:   LINE_BREAK
+1585CD:   PRINT これで、チャフブラムも連合に加わってくれる。Ａ．
+-- ENGRISH: This, Chafuburamu also us joined the Union. A.
+1585FD:   JUMP8C WAIT_FOR_INPUT
+158600:   IF NOT BIT [KNOWS_DISKIKI_NEED] DO: 
+158603:   IF NOT BIT [DISKIKI_SOMETHING] DO: 
+158606:   SKIP 00
+158608:   JUMP96 15866A
+15860B:   PRINT ディスキキのチャフブラム酋長は、村をおそう岩ィラボサウルスにタルをつ王てほしいとのこと。Ａ．
+-- ENGRISH: Chafuburamu of Disukiki chiefs, that of the village want the king One a barrel to rock ~Irabosaurusu to attack. A.
+158667:   JUMP8C WAIT_FOR_INPUT
+15866A:   JUMP8C WAIT_FOR_INPUT
+15866D:   IF NOT SELECTED DIALOG [(２ページ目 - Page 2)  DO: 
+158670:   JUMP96 15869A
+158673:   PRINT （ページをめくった）
+-- ENGRISH: (Turn the page)
+158687:   SET_DIALOG_OPTIONS HIDE 1 (バラッブ - Barabbu) HIDE 2 (ディスキキ - Disukiki) HIDE 3 (ハークール - Hakuru) HIDE 4 (バラコ - Barako) HIDE 5 (ピンディロ - Pindiro) HIDE 6 (ジュカリ - Jukari) 
+15868F:   SET_DIALOG_OPTIONS SHOW 7 (ナウアトラ - Nauatora) SHOW 8 (サックラー - Sackler) SHOW 9 (ウラリ - Urari) SHOW 10 (バラッブ - Barabbu) SHOW 11 (ディスキキ - Disukiki) SHOW 12 (２ページ目 - Page 2) 
+158697:   JUMP8C 15869A
+15869A:   WAIT_FOR_INPUT
+15869B:   IF NOT SELECTED DIALOG [(ハークール - Hakuru)  DO: 
+15869E:   JUMP96 1587AD
+1586A1:   SET_DIALOG_OPTIONS HIDE 7 (ナウアトラ - Nauatora) 
+1586A4:   PRINT ハークール族はつよい！とラリフィンは退えてくれた。Ｊ．Ｍ．
+-- ENGRISH: Hakuru tribe strong! And Rarifin told me Shisae. J. M.
+1586DE:   LINE_BREAK
+1586DF:   LINE_BREAK
+1586E0:   IF NOT BIT [A2] DO: 
+1586E3:   IF NOT BIT [A3] DO: 
+1586E6:   SKIP 00
+1586E8:   JUMP96 15873C
+1586EB:   PRINT クルッククの治を追りかえした。グル放ールルは連合への参加を約束してくれた。Ａ．
+-- ENGRISH: Ji of Kurukkuku returned Tsuiri. Guru release Ruru was promised to join the Union. A.
+158739:   JUMP8C WAIT_FOR_INPUT
+15873C:   IF NOT BIT [A2] DO: 
+15873F:   IF NOT BIT [23] DO: 
+158742:   SKIP 00
+158744:   JUMP96 1587AA
+158747:   PRINT ハークール族のグル放ールル酋長の溶い。息子のクルッククの治を、ク座のばくつから追り戦したい。Ａ．
+-- ENGRISH: And beaten the group of guru release Ruru chief Hakuru. Ji son of Kurukkuku, I want to Tsuiri warfare from one exposure clauses seat. A.
+1587A7:   JUMP8C WAIT_FOR_INPUT
+1587AA:   JUMP8C WAIT_FOR_INPUT
+1587AD:   IF NOT SELECTED DIALOG [(バラコ - Barako)  DO: 
+1587B0:   JUMP96 15890A
+1587B3:   SET_DIALOG_OPTIONS HIDE 8 (サックラー - Sackler) 
+1587B6:   PRINT ここでバラコ族のことを知っているのは争争イだ王だった。
+-- ENGRISH: Here it was the king's 争争 ​​stomach know that of Barako group.
+1587EC:   LINE_BREAK
+1587ED:   LINE_BREAK
+1587EE:   PRINT だが、争争イは、バラコにかんして、大ビルのことしか知らなかった。大ビルってなんだ？?Ｊ．Ｍ．
+-- ENGRISH: But, 争争 stomach, Barako regard, had only known of the large building. It's What large building? J. M.
+15884A:   LINE_BREAK
+15884B:   IF NOT BIT [A6] DO: 
+15884E:   IF NOT BIT [A7] DO: 
+158851:   SKIP 00
+158853:   JUMP96 1588A9
+158856:   PRINT 酋長の娘ハリサを大ビルから救出。酋長のハラゲは、連合に参加を約束してくれた。Ａ．
+-- ENGRISH: The rescue from a large building a daughter Harisa chief. Harage chief has promised to participate in the coalition. A.
+1588A6:   JUMP8C WAIT_FOR_INPUT
+1588A9:   IF NOT BIT [A6] DO: 
+1588AC:   IF NOT BIT [27] DO: 
+1588AF:   SKIP 00
+1588B1:   JUMP96 158907
+1588B4:   PRINT バラコ族のハラゲ酋長のメズ。大ビルにさらわれた娘を、救出してほしいとのこと。Ａ．
+-- ENGRISH: Barako group of Harage chief of Meze. The daughter was kidnapped in large buildings, it is the hope and rescue. A.
+158904:   JUMP8C WAIT_FOR_INPUT
+158907:   JUMP8C WAIT_FOR_INPUT
+15890A:   IF NOT SELECTED DIALOG [(ピンディロ - Pindiro)  DO: 
+15890D:   JUMP96 1589DB
+158910:   SET_DIALOG_OPTIONS HIDE 9 (ウラリ - Urari) 
+158913:   PRINT ピンディロ族は、事が酋長になるとぞャーづが退えてくれた。
+-- ENGRISH: Pindiro family, things gave me catcher over Dzuga Shisae each to become chief.
+15894B:   LINE_BREAK
+15894C:   LINE_BREAK
+15894D:   PRINT こんど村にいってみたいもんだ……。Ｊ．Ｍ．
+-- ENGRISH: Now I rubbed you want to go to the village .... J. M.
+158977:   LINE_BREAK
+158978:   LINE_BREAK
+158979:   LINE_BREAK
+15897A:   IF NOT BIT [INARA_UNUSED?] DO: 
+15897D:   IF NOT BIT [INARA_EXPLAINED_ALREADY_WHY_PINDIRO_JOINS_UNION] DO: 
+158980:   SKIP 00
+158982:   JUMP96 1589D8
+158985:   PRINT イナーラ酋長に部族連合のはなしをすると、謎事はす守に、参加を約束してくれた。Ａ．
+-- ENGRISH: When the story of the tribal coalition to Inara chief, Nazo-goto to be Mori, who promised to participate. A.
+1589D5:   JUMP8C WAIT_FOR_INPUT
+1589D8:   JUMP8C WAIT_FOR_INPUT
+1589DB:   IF NOT SELECTED DIALOG [(ジュカリ - Jukari)  DO: 
+1589DE:   JUMP96 158B19
+1589E1:   SET_DIALOG_OPTIONS HIDE 10 (バラッブ - Barabbu) 
+1589E4:   PRINT ジュカリ族は神ァの像にすんでいるとか！
+-- ENGRISH: Jukari tribe Toka lives to the image of the Kami~a!
+158A0A:   LINE_BREAK
+158A0B:   PRINT マジかよ倒?Ｊ．Ｍ．
+-- ENGRISH: Seriously or by debt J. M.
+158A1F:   LINE_BREAK
+158A20:   LINE_BREAK
+158A21:   IF NOT BIT [B6] DO: 
+158A24:   IF NOT BIT [B7] DO: 
+158A27:   SKIP 00
+158A29:   JUMP96 158A83
+158A2C:   PRINT プなる隠を追り戦し、酋長にわたした。謎は、帳生の背として、??を約束してくれた。Ａ．
+-- ENGRISH: The flop made Como was Tsuiri warfare, it was me chief. Mystery, as the spine of the book production, was promised a. A.
+158A80:   JUMP8C WAIT_FOR_INPUT
+158A83:   IF NOT BIT [B6] DO: 
+158A86:   IF NOT BIT [37] DO: 
+158A89:   SKIP 00
+158A8B:   JUMP96 158B16
+158A8E:   PRINT ジュカリ族のジュムー酋長は、プなるばくつにある、プなる隠を追ってきてほしいとのこと。
+-- ENGRISH: Jukari group of Jumu chief, it is of and is in the shoes if made up, I want you to have step-by-step is a preference become hidden.
+158AE2:   LINE_BREAK
+158AE3:   PRINT ??をこえるには、どうしたらよいのだろうか。Ａ．
+-- ENGRISH: A To exceed, I wonder if you can you. A.
+158B13:   JUMP8C WAIT_FOR_INPUT
+158B16:   JUMP8C WAIT_FOR_INPUT
+158B19:   IF NOT SELECTED DIALOG [(ナウアトラ - Nauatora)  DO: 
+158B1C:   JUMP96 158CA4
+158B1F:   SET_DIALOG_OPTIONS HIDE 11 (ディスキキ - Disukiki) 
+158B22:   PRINT アス岩カ族の生きのこりだ！
+-- ENGRISH: Us It's rock mosquitoes live the rest!
+158B3C:   LINE_BREAK
+158B3D:   PRINT いま、?クにわかるのはそれだ王。Ｊ．Ｍ．
+-- ENGRISH: Now, I know the clause king's it. J. M.
+158B65:   LINE_BREAK
+158B66:   IF NOT BIT [C3] DO: 
+158B69:   IF NOT BIT [C4] DO: 
+158B6C:   SKIP 00
+158B6E:   JUMP96 158BE2
+158B71:   PRINT ウィトラパク岩ィはいなくなり、座ク?づトルが?となった。
+-- ENGRISH: U~itorapaku Iwa~i no longer have, Zakudzu Torr was Tonari~tsu.
+158BA9:   LINE_BREAK
+158BAA:   LINE_BREAK
+158BAB:   PRINT ?は、ミルミデックス??に参加してくれるそうだ。Ａ．
+-- ENGRISH: It is, it's so willing to participate in the Mirumidekkusu. A.
+158BDF:   JUMP8C WAIT_FOR_INPUT
+158BE2:   IF NOT BIT [C3] DO: 
+158BE5:   IF NOT BIT [44] DO: 
+158BE8:   SKIP 00
+158BEA:   JUMP96 158CA1
+158BED:   PRINT ナウアトラを??された座ク?づトルは、??を追り戦したいと溶っている。
+-- ENGRISH: Zakudzu Torr been a Nauatora is, it is 溶~Tsu want to Tsuiri the battlefield.
+158C33:   LINE_BREAK
+158C34:   PRINT そのためには、ウィトラパク岩ィを??する必要があるが……
+-- ENGRISH: For this purpose, it is necessary to the U~itorapaku Iwa~i ......
+158C6C:   LINE_BREAK
+158C6D:   LINE_BREAK
+158C6E:   PRINT もしまともに?い出そうとすれ?、??になる。Ａ．
+-- ENGRISH: Attrition and try to Daso have if decent, to become. A.
+158C9E:   JUMP8C WAIT_FOR_INPUT
+158CA1:   JUMP8C WAIT_FOR_INPUT
+158CA4:   IF NOT SELECTED DIALOG [(３ページ目 - The third page)  DO: 
+158CA7:   JUMP96 158CCE
+158CAA:   PRINT （ページをめくった）
+-- ENGRISH: (Turn the page)
+158CBE:   SET_DIALOG_OPTIONS HIDE 7 (ナウアトラ - Nauatora) HIDE 8 (サックラー - Sackler) HIDE 9 (ウラリ - Urari) HIDE 10 (バラッブ - Barabbu) HIDE 11 (ディスキキ - Disukiki) HIDE 12 (２ページ目 - Page 2) 
+158CC6:   SET_DIALOG_OPTIONS SHOW 13 (ハークール - Hakuru) SHOW 14 (バラコ - Barako) SHOW 15 (ピンディロ - Pindiro) 
+158CCB:   JUMP8C 158CCE
+158CCE:   WAIT_FOR_INPUT
+158CCF:   IF NOT SELECTED DIALOG [(サックラー - Sackler)  DO: 
+158CD2:   JUMP96 158E38
+158CD5:   SET_DIALOG_OPTIONS HIDE 13 (ハークール - Hakuru) 
+158CD8:   PRINT なんと?ックリ、トカ?人間だ！
+-- ENGRISH: What Kkuri's trocar human!
+158CF6:   LINE_BREAK
+158CF7:   LINE_BREAK
+158CF8:   LINE_BREAK
+158CF9:   PRINT アル岩ィ?イト・アドタンチャー?に記?をのせたら、ものすごいことになる?！?Ｊ．Ｍ．
+-- ENGRISH: Once you put come to Al rock ~Iito-Adotancha, it becomes terrible thing! J. M.
+158D4D:   LINE_BREAK
+158D4E:   IF NOT BIT [D2] DO: 
+158D51:   IF NOT BIT [D3] DO: 
+158D54:   SKIP 00
+158D56:   JUMP96 158DD6
+158D59:   PRINT サックラー族をエサにしていた岩ィラボサウルスはかた?王た。
+-- ENGRISH: Sackler group the it was rock ~Irabosaurusu Hakata King had to bait.
+158D93:   LINE_BREAK
+158D94:   LINE_BREAK
+158D95:   PRINT 謎らは、ミルミデックス??に??してくれることになった。Ａ．
+-- ENGRISH: Traced was supposed to be us to Mirumidekkusu. A.
+158DD1:   LINE_BREAK
+158DD2:   LINE_BREAK
+158DD3:   JUMP8C WAIT_FOR_INPUT
+158DD6:   IF NOT BIT [D2] DO: 
+158DD9:   IF NOT BIT [53] DO: 
+158DDC:   SKIP 00
+158DDE:   JUMP96 158E35
+158DE1:   PRINT ぞスカールル酋長は、岩ィラボサウルス・争ックスを??してほしいと言っていた。Ａ．
+-- ENGRISH: Gonna Sukaruru chief had said that I want you to rock ~Irabosaurusu-war box. A.
+158E31:   LINE_BREAK
+158E32:   JUMP8C WAIT_FOR_INPUT
+158E35:   JUMP8C WAIT_FOR_INPUT
+158E38:   IF NOT SELECTED DIALOG [(ウラリ - Urari)  DO: 
+158E3B:   JUMP96 159076
+158E3E:   SET_DIALOG_OPTIONS HIDE 14 (バラコ - Barako) 
+158E41:   PRINT ?の部族、ウラリ！
+-- ENGRISH: Tribal, Urari!
+158E53:   LINE_BREAK
+158E54:   PRINT そのすみかは?だ。
+-- ENGRISH: The abode's.
+158E66:   LINE_BREAK
+158E67:   PRINT Ｊ．Ｍ．
+-- ENGRISH: J. M.
+158E6F:   LINE_BREAK
+158E70:   LINE_BREAK
+158E71:   IF NOT BIT [E7] DO: 
+158E74:   IF NOT BIT [E8] DO: 
+158E77:   IF NOT BIT [E6] DO: 
+158E7A:   SKIP 00
+158E7C:   SKIP 00
+158E7E:   JUMP96 158EFA
+158E81:   PRINT ウラリの?り?、フ???の石?をダーデンのばくつから追り戦した。ダーデンを?してゲマッ?を酋長にすることができた。Ａ．
+-- ENGRISH: Urari glue, it was Tsuiri against the full of stone from one exposure of Darden. The Gema~tsu by the Darden it was possible to make chief. A.
+158EF7:   JUMP8C WAIT_FOR_INPUT
+158EFA:   IF NOT BIT [E7] DO: 
+158EFD:   IF NOT BIT [E8] DO: 
+158F00:   SKIP 00
+158F02:   JUMP96 158F6C
+158F05:   PRINT ウラリの?り?、フ???の石?をダーデンのばくつから追り戦した。
+-- ENGRISH: Urari glue, it was Tsuiri against the full of stone from one exposure of Darden.
+158F45:   LINE_BREAK
+158F46:   PRINT あとは、ダーデンを?すだ王だ。Ａ．
+-- ENGRISH: After that, it's the king that to the Darden. A.
+158F68:   LINE_BREAK
+158F69:   JUMP8C WAIT_FOR_INPUT
+158F6C:   IF NOT BIT [E7] DO: 
+158F6F:   IF NOT BIT [68] DO: 
+158F72:   IF NOT BIT [E6] DO: 
+158F75:   SKIP 00
+158F77:   SKIP 00
+158F79:   JUMP96 158FEA
+158F7C:   PRINT ウラリ族のゲマッ?のメズ。
+-- ENGRISH: Urari group of Meze of Gema~tsu.
+158F96:   LINE_BREAK
+158F97:   LINE_BREAK
+158F98:   LINE_BREAK
+158F99:   PRINT ばくつに?されてしまった?り?、フ???の石?を追り戦してほしいとのこと。Ａ．
+-- ENGRISH: It can be gone is to Bakutsu, that it and want you to Tsuiri against the mark in stone. A.
+158FE7:   JUMP8C WAIT_FOR_INPUT
+158FEA:   IF NOT BIT [E7] DO: 
+158FED:   IF NOT BIT [68] DO: 
+158FF0:   SKIP 00
+158FF2:   JUMP96 159073
+158FF5:   PRINT ウラリ族のゲマッ?のメズ。
+-- ENGRISH: Urari group of Meze of Gema~tsu.
+15900F:   LINE_BREAK
+159010:   LINE_BREAK
+159011:   LINE_BREAK
+159012:   PRINT ばくつに?されてしまった?り?、フ???の石?を追り戦し、ダーデンを?してほしいとのこと。Ａ．
+-- ENGRISH: You can be gone is to Bakutsu, the marks in the stone is Tsuiri warfare, it is with the hope that the Darden. A.
+159070:   JUMP8C WAIT_FOR_INPUT
+159073:   JUMP8C WAIT_FOR_INPUT
+159076:   IF NOT SELECTED DIALOG [(おしまい - Concludes)  DO: 
+159079:   JUMP96 1590B1
+15907C:   PRINT （キミは?座?をとじ、?像のバックパックにしまった）
+-- ENGRISH: (Kimi closes the seat, it was closed to the backpack of the image)
+1590B0:   (BLANK)
+1590B1:   
