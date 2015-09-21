@@ -1,0 +1,1 @@
+This repository contains a set of tools to be used in the translation of the Savage Empire SNES ROM.
