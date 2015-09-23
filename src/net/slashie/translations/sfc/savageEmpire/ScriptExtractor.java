@@ -17,7 +17,7 @@ public class ScriptExtractor {
 	private static final boolean TRANSLATE = true;
 	private final static int CONVERSATION_ID = 2; // 0 to 35 
 	enum Mode { DISASSEMBLE, EXTRACT_SCRIPT};
-	private static final Mode MODE = Mode.EXTRACT_SCRIPT;
+	private static final Mode MODE = Mode.DISASSEMBLE;
 	
 	private static final int BANK_SIZE = 0x8000;
 	private static final int CHARSET_TABLE_OFFSET = 0x118000;
@@ -34,46 +34,6 @@ public class ScriptExtractor {
 	private final static Map<String, String> PORTRAITS = new HashMap<String, String>();
 	static {
 		PORTRAITS.put("F8", "RAFKIN");
-	}
-	
-	private final static Map<String, String> KNOWN_BITS = new HashMap<String, String>();
-	static {
-		KNOWN_BITS.put("07", "KURAK_SOMETHING");
-		KNOWN_BITS.put("0B", "YOLARU_SOMETHING");
-		KNOWN_BITS.put("11", "BARRAB_SOMETHING");
-		KNOWN_BITS.put("15", "DISKIKI_SOMETHING");
-		
-		// KNOWN_BITS.put("63", "NEEDS_MATERIAL_FOR_DRUM");
-		
-		KNOWN_BITS.put("81", "ASKED_DOKREI_ABOUT_UNION");
-		
-		KNOWN_BITS.put("86", "KNOWS_KURAK_NEED");
-		KNOWN_BITS.put("87", "AIERA_SAVED_KURAK_JOINED_UNION");
-		
-		KNOWN_BITS.put("8A", "KNOWS_YOLARU_NEED");
-		KNOWN_BITS.put("8B", "YOLARU_JOINED_UNION");
-		
-		KNOWN_BITS.put("90", "KNOWS_BARRAB_NEED");
-		KNOWN_BITS.put("91", "BARRAB_JOINED_UNION");
-		
-		KNOWN_BITS.put("94", "KNOWS_DISKIKI_NEED");
-		KNOWN_BITS.put("95", "DISKIKI_JOINED_UNION");
-		
-		KNOWN_BITS.put("9A", "KNOWS_DOKREY");
-		
-		KNOWN_BITS.put("9E", "KNOWS_FRITZ");
-		KNOWN_BITS.put("9F", "FRITZ_TALKED_ABOUT_BRAIN");
-		KNOWN_BITS.put("A0", "FRITZ_ALREADY_TOLD_LONG_STORY");
-		
-		KNOWN_BITS.put("AA", "KNOWS_INARA");
-		KNOWN_BITS.put("AB", "INARA_UNUSED?");
-		KNOWN_BITS.put("AC", "INARA_EXPLAINED_ALREADY_WHY_PINDIRO_JOINS_UNION");
-		
-		KNOWN_BITS.put("AD", "INTANYA_CONVERSATION_RESET");
-		
-		// KNOWN_BITS.put("B1", "KNOWS_NEED_FOR_DRUM_2");
-		// KNOWN_BITS.put("E2", "KNOWS_ABOUT_DRUM_3");
-		// KNOWN_BITS.put("E3", "DRUM_WAS_MADE");
 	}
 	
 	private final static List<String> DIALOG_NAMES = new ArrayList<String>();
@@ -213,8 +173,8 @@ public class ScriptExtractor {
 								outp_both("!");
 								commentFragment = commentFragment.substring(1);
 							}
-							if (KNOWN_BITS.get(commentFragment) != null){
-								outp_both(KNOWN_BITS.get(commentFragment));
+							if (Bits.KNOWN_BITS.get(commentFragment) != null){
+								outp_both(Bits.KNOWN_BITS.get(commentFragment));
 							} else {
 								outp_both(commentFragment);
 							}
@@ -268,7 +228,7 @@ public class ScriptExtractor {
 					//byteSequenceFinishingWith00();
 					byte readByte = 0x00;
 					while ((readByte = romfile.readByte()) != (byte)0x00){
-						String bitName = KNOWN_BITS.get(transform2(readByte));
+						String bitName = Bits.KNOWN_BITS.get(transform2(readByte));
 						outp(bitName != null ? bitName: transform2(readByte));
 					}
 					
@@ -278,7 +238,7 @@ public class ScriptExtractor {
 					outp("IF NOT BIT [");
 					readByte = 0x00;
 					while ((readByte = romfile.readByte()) != (byte)0x00){
-						String bitName = KNOWN_BITS.get(transform2(readByte));
+						String bitName = Bits.KNOWN_BITS.get(transform2(readByte));
 						outp(bitName != null ? bitName: transform2(readByte));
 					}
 					outpl("] DO: ");
