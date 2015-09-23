@@ -36,7 +36,9 @@ public class Bits {
 			"AB", "INARA_UNUSED?",
 			"AC", "INARA_EXPLAINED_ALREADY_WHY_PINDIRO_JOINS_UNION",
 			
-			"AD", "INTANYA_CONVERSATION_RESET"
+			"AD", "INTANYA_CONVERSATION_RESET",
+			
+			"C5", "KNOWS_MOSAGAN"
 		};
 		for (int i = 0; i < data.length; i+=2){
 			KNOWN_BITS.put(data[i], data[i+1]);

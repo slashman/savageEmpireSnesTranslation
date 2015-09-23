@@ -26,6 +26,10 @@ public class InjectedComments {
 		"160B6C", "!AC",
 		"160C59", "AC",
 		"160C8F", "!AC",
+		
+		// Dialog 21
+		"163CF9", "C5",
+		"163D22", "!C5",
 		};
 		for (int i = 0; i < data.length; i+=2){
 			COMMENTS.put(data[i], data[i+1]);
