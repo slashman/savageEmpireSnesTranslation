@@ -14,6 +14,7 @@ public class Bits {
 			
 			"81", "ASKED_DOKREI_ABOUT_UNION",
 			
+			"85", "KNOWS_ARORON",
 			"86", "KNOWS_KURAK_NEED",
 			"87", "AIERA_SAVED_KURAK_JOINED_UNION",
 			
@@ -38,7 +39,10 @@ public class Bits {
 			
 			"AD", "INTANYA_CONVERSATION_RESET",
 			
-			"C5", "KNOWS_MOSAGAN"
+			"B1", "KNOWS_ABOUT_TOPURU?",
+			"C5", "KNOWS_MOSAGAN",
+			
+			"CA", "KNOWS_Pakusakutamaku",
 		};
 		for (int i = 0; i < data.length; i+=2){
 			KNOWN_BITS.put(data[i], data[i+1]);
