@@ -36,26 +36,6 @@ public class ScriptExtractor {
 		PORTRAITS.put("F8", "RAFKIN");
 	}
 	
-	private final static List<String> DIALOG_NAMES = new ArrayList<String>();
-	static{
-		DIALOG_NAMES.add("Eodon Exploration Record by Jimmy");
-		DIALOG_NAMES.add("Victory");
-		DIALOG_NAMES.add("Aroron. Chief of the Kurak");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("Dokurei (Dokrey)");
-		DIALOG_NAMES.add("Fritz von Hun Traben (He probably sells bullets for emeralds?)");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("?");
-		DIALOG_NAMES.add("OK - Inara. Pindiro");
-
-	}
-
 	public static void main(String[] args) throws IOException, GoogleAPIException {
 		new ScriptExtractor().readFile("savage.smc");
 	}
@@ -97,8 +77,7 @@ public class ScriptExtractor {
 			currentDialogScriptBank = 0;
 			currentDialogOptions = null;
 			outpl_both("-- DIALOG "+(i+1));
-			if (i < DIALOG_NAMES.size())
-				outpl_both("-- "+DIALOG_NAMES.get(i));
+			outpl_both("-- "+Dialogs.DIALOGS.get((i+1)+""));
 			romfile.seek(CHARSET_TABLE_OFFSET+4*i);
 			romfile.read(charsetPointer);
 			long charsetOffset = calculatePointer(charsetPointer);
