@@ -9,7 +9,8 @@ public class Dialogs {
 		String[] data = new String[]{
 			"1", "Eodon Exploration Record by Jimmy",
 			"2", "Victory",
-			"4", "Aroron. Chief of the Kurak",
+			"4", "Aroron. Chief of the Kurak (Done)",
+			"5", "Apaton. Chief of the Yolaru (In progress)",
 			"8", "Dokurei (Dokrey)",
 			"9", "Fritz von Hun Traben (He probably sells bullets for emeralds?)",
 			"15", "Inara, Chief of the Pindiro (Done)",

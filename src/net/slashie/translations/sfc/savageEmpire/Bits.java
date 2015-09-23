@@ -18,6 +18,7 @@ public class Bits {
 			"86", "KNOWS_KURAK_NEED",
 			"87", "AIERA_SAVED_KURAK_JOINED_UNION",
 			
+			"88", "KNOWS_APATON",
 			"8A", "KNOWS_YOLARU_NEED",
 			"8B", "YOLARU_JOINED_UNION",
 			

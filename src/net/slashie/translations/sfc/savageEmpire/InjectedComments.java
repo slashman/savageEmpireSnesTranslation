@@ -30,6 +30,16 @@ public class InjectedComments {
 		"15A3A5", "NOT PROMPT",
 		"15A3CF", "YES PROMPT",
 		
+		// Dialog 5
+		"15A74A", "88 && 8B",
+		"15A789", "88 && !8B && 89",
+		"15A7DE", "88 && !8B && !89",
+		"15A805", "!88",
+		"15AA0E", "8B",
+		"15AA67", "!8B && 8A",
+		"15AAD6", "!8B && !8A",
+		"15AC9E", "8B",
+		
 		// Dialog 9
 		"15D75A", "9E",
 		"15D791", "!9E",
